@@ -1,0 +1,5 @@
+package Resistencia;
+
+public enum Colors {
+    NEGRO, MARRON, ROJO, NARANJA, AMARILLO, VERDE, AZUL, VIOLETA, GRIS, BLANCO
+}
