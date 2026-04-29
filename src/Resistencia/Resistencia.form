@@ -12,10 +12,17 @@
     <children>
       <component id="85f3b" class="javax.swing.JComboBox" binding="comboBox1B">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="10" height="-1"/>
+            <preferred-size width="40" height="-1"/>
+            <maximum-size width="40" height="-1"/>
+          </grid>
         </constraints>
         <properties>
           <background color="-14276564"/>
+          <model/>
+          <opaque value="false"/>
+          <popupVisible value="false"/>
         </properties>
       </component>
       <component id="5dfee" class="javax.swing.JComboBox" binding="comboBox2B">
@@ -109,6 +116,14 @@
         </constraints>
         <properties>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="e3bcf" class="javax.swing.JLabel" binding="maxi">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
         </properties>
       </component>
     </children>

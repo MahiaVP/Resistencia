@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class Resistencia {
     private JPanel mainPanel;
@@ -16,6 +17,7 @@ public class Resistencia {
     private JLabel Total;
     private JLabel Max;
     private JLabel Min;
+    private JLabel maxi;
 
     public Resistencia(){
         comboBox1B.setModel(new DefaultComboBoxModel<>(Colors.values()));
@@ -26,6 +28,8 @@ public class Resistencia {
 
         final int[] v1 = new int[4];
         final String[] v2 = new String[1];
+        v2[0]="";
+        final int[] n = new int[1];
         comboBox1B.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,20 +73,40 @@ public class Resistencia {
         comboBox3B.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Colors selected= (Colors)comboBox2B.getSelectedItem();
+                Colors selected= (Colors)comboBox3B.getSelectedItem();
                 switch (selected){
                     case NEGRO -> v2[0]="";
                     case MARRON ->v2[0]="0";
                     case ROJO -> v2[0]="00";
-                    case NARANJA -> v2[0]="000";
-                    case AMARILLO ->v2[0]="0000";
-                    case VERDE -> v2[0]="00000";
-                    case AZUL -> v2[0]="000000";
-                    case VIOLETA -> v2[0]="0000000";
-                    case GRIS -> v2[0]="00000000";
-                    case BLANCO -> v2[0]="000000000";
+                    case NARANJA -> v2[0]="k";
+                    case AMARILLO ->v2[0]="0k";
+                    case VERDE -> v2[0]="00k";
+                    case AZUL -> v2[0]="M";
+                    case VIOLETA -> v2[0]="0M";
+                    case GRIS -> v2[0]="00M";
+                    case BLANCO -> v2[0]="G";
                 }
                 Total.setText(String.valueOf(v1[0])+String.valueOf(v1[1])+String.valueOf(v2[0]));
+            }
+        });
+        comboBox4B.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String num = String.valueOf(v1[0])+String.valueOf(v1[1])+v2[0];
+                Colors selected= (Colors)comboBox4B.getSelectedItem();
+                switch (selected){
+                    case NEGRO -> v2[0]="0";
+                    case MARRON -> n[0] =Integer.parseInt(num);
+                    case ROJO -> v2[0]="00";
+                    case NARANJA -> v2[0]="k";
+                    case AMARILLO ->v2[0]="0k";
+                    case VERDE -> v2[0]="00k";
+                    case AZUL -> v2[0]="M";
+                    case VIOLETA -> v2[0]="0M";
+                    case GRIS -> v2[0]="00M";
+                    case BLANCO -> v2[0]="G";
+                }
+                maxi.setText(String.valueOf(n));
             }
         });
     }
